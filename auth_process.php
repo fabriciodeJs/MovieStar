@@ -23,41 +23,53 @@ if ($type === "register") {
   $confirmpassword = filter_input(INPUT_POST, "confirmpassword");
 
   // VERIFICAÇÃO DE DADOS MINIMOS 
-  if ($name && $lastname && $email && $password) {
-    // VERIFICAR SENHA
-    if ($password !== $confirmpassword){
-      $message->setMessage("As senhas não são iguais.", "error", "back");
-      die();
-    }
-    // VERIFICAR SE JA EXISTE O EMAIL CADASTRADO
-    if ($userDao->findByEmail($email)){
-      $message->setMessage("E-mail Ja Cadastrado, tente outro e-mail.", "error", "back");
-      die();
-    }
-
-    $user = new User();
-
-    //CRIAÇÃO DE TOKEN E SENHA
-    $userToken = $user->generateToken();
-    $finalPassword = $user->generatePassword($password);
-
-    $user->name = $name;
-    $user->lastname = $lastname;
-    $user->email = $email;
-    $user->password = $finalPassword;
-    $user->token = $userToken;
-
-    $auth = true;
-
-    $userDao->create($user, $auth);
-
-  }else {
-    // ENVIAR MESAGEM DE ERRO, DE FALTA DE DADOS
+  if (!$name && !$lastname && !$email && !$password) {
     $message->setMessage("Por favor, Preencha todos os campos.", "error", "back");
+    die();
   }
+  // VERIFICAR SENHA
+  if ($password !== $confirmpassword){
+    $message->setMessage("As senhas não são iguais.", "error", "back");
+    die();
+  }
+  // VERIFICAR SE JA EXISTE O EMAIL CADASTRADO
+  if ($userDao->findByEmail($email)){
+    $message->setMessage("E-mail Ja Cadastrado, tente outro e-mail.", "error", "back");
+    die();
+  }
+
+
+
+  $user = new User();
+
+  //CRIAÇÃO DE TOKEN E SENHA
+  $userToken = $user->generateToken();
+  $finalPassword = $user->generatePassword($password);
+
+  $user->name = $name;
+  $user->lastname = $lastname;
+  $user->email = $email;
+  $user->password = $finalPassword;
+  $user->token = $userToken;
+
+  $auth = true;
+
+  $userDao->create($user, $auth);
 
 } else if($type === "login") {
   
+  $email = filter_input(INPUT_POST, "email");
+  $password = filter_input(INPUT_POST, "password");
+  
+  if ($userDao->authenticateUser($email, $password)) {
 
+    $this->message->setMessage("Seja Bem-vindo!", "success", "/editprofile.php");
 
+  }else {
+    $message->setMessage("Usuario e/ou senha Incorretos.", "error", "back");
+  }
+
+}else {
+  $message->setMessage("Informações invalidas.", "error", "/index.php");
+  
 }
