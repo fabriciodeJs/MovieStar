@@ -138,6 +138,40 @@
   border-color:#f5c518
 }
 
+/* NEEWMOVIE */
+.newmovie .form-group {
+  margin: 20px 0;
+} 
+
+.form-select{
+  margin-top: 10px;
+}
+
+.new-movie-container {
+  text-align: center;
+}
+
+#add-movie-form {
+  text-align: left;
+}
+
+.movie-image-container {
+  height: 400px;
+  min-width: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.page-title::after {
+  display: block;
+  margin: 0 auto;
+  padding-top: 7px;
+  content: "";
+  width: 300px;
+  border-bottom: 2px solid #f5c518;
+  
+}
+
 /* EDITPROFILE */
 
 #profile-image-container {

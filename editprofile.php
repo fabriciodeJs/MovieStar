@@ -17,7 +17,7 @@
 
 <div id="main-container" class="container-fluid edit-profile-page">
   <div class="col-md-12">
-    <form action="<?= $BASE_URL ?>user_process.php" method="post" enctype="multipart/form-data">
+    <form action="<?= $BASE_URL ?>/user_process.php" method="post" enctype="multipart/form-data">
       <input type="hidden" name="type" value="update">
       <div class="row">
         <div class="col-md-4">
@@ -57,7 +57,7 @@
       <div class="col-md-4">
         <h2>Alterar a Senha</h2>
         <p class="page-description">Digite a Nova Senha e confirme, para alterar su senha:</p>
-        <form action="<?= $BASE_URL ?>user_process.php" method="post">
+        <form action="<?= $BASE_URL ?>/user_process.php" method="post">
           <input type="hidden" name="type" value="changepassword">
           <div class="form-group">
             <label for="password">Nova Senha: </label>

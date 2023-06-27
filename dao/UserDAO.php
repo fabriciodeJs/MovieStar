@@ -73,7 +73,8 @@ class UserDAO implements UserDAOInterface {
     $stmt->execute();
 
     if ($redirect) {
-      $this->message->setMessage("Dados atualizados com Sucesso", "success", "/editprofile.php");
+      // REDIRECIONA PARA PERFIL DO USUARIO
+      $this->message->setMessage("Usuário Cadastrado com Sucesso", "success", "/editprofile.php");
     }
 
   }
@@ -129,7 +130,7 @@ class UserDAO implements UserDAOInterface {
 
         //Atualizar token no usuario
         $user->token = $token;
-        $this->update($user);
+        $this->update($user, false);
     
         return true;
       }
@@ -185,6 +186,18 @@ class UserDAO implements UserDAOInterface {
   }
 
   public function changePassword(User $user){
+
+    $stmt = $this->conn->prepare("UPDATE users SET
+                                  password = :password
+                                  WHERE id = :id");
+
+    $stmt->bindParam(":password", $user->password);
+    $stmt->bindParam(":id", $user->id);
+
+    $stmt->execute();
+
+    // REDIRECIONA E APRESENTA A MESSAGEM DE SUCESSO
+    $this->message->setMessage("Você alterou a senha com sucesso!", "success", "/editprofile.php");
 
   }
 

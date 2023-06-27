@@ -63,7 +63,7 @@ if ($type === "register") {
   
   if ($userDao->authenticateUser($email, $password)) {
 
-    $this->message->setMessage("Seja Bem-vindo!", "success", "/editprofile.php");
+    $message->setMessage("Seja Bem-vindo!", "success", "/editprofile.php");
 
   }else {
     $message->setMessage("Usuario e/ou senha Incorretos.", "error", "back");
