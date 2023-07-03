@@ -37,14 +37,12 @@ if ($type === "update") {
     $jpgArray = ["image/jpg", "image/jpeg"];
     // VALIDANDO IMAGEM
     if (in_array($image['type'], $imageTypes)) {
-    
+      //CHECA SE É JPG
       if (in_array($image, $jpgArray)) {
         $imageFile = imagecreatefromjpeg($image["tmp_name"]);
-        
       }else {
         // IMAGEM PNG
         $imageFile = imagecreatefrompng($image["tmp_name"]);
-        
       }
 
       $imageName = $user->imageGenerateName();

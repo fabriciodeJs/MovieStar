@@ -99,6 +99,73 @@
   padding: 40px;
 }
 
+.section-title{
+  font-size: 24px;
+  border-left: 4px solid #f5c518;
+  padding-left: 12px;
+  margin-top: 20px;
+}
+
+.section-description {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  width: 18%;
+  margin: 0 1% 30px 1%;
+}
+
+.movie-card .card-img-top{
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-title {
+  height: 3rem;
+}
+
+.card-title a {
+  font-size: 16px;
+  color: #fff;
+}
+
+.fas.fa-star {
+  color: #f5c518;
+}
+
+.rating {
+  color: #ccc;
+}
+
+.rate-btn {
+  margin-bottom: 5px;
+  color: #5799ef;
+  background-color: #333;
+  width: 100%;
+  font-weight: bold;
+}
+
+.rate-btn:hover {
+  background-color: #444;
+  border-color: #444;
+}
+
+.empty-list {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  font-weight: bold;
+}
 /* LOGIN / REGISTER */
 
 #auth-row {
@@ -139,13 +206,11 @@
 }
 
 /* NEEWMOVIE */
-.newmovie .form-group {
-  margin: 20px 0;
-} 
 
-.form-select{
-  margin-top: 10px;
+.form-select {
+  margin: 10px 0;
 }
+
 
 .new-movie-container {
   text-align: center;

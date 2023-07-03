@@ -24,16 +24,16 @@
           <h1><?= $fullName ?></h1>
           <p class="page-description">Altere seus dados no formulário abaixo: </p>
           <div class="form-group">
-            <label for="name">Nome: </label>
+            <label class="form-label" for="name">Nome: </label>
             <input type="text" name="name" id="name" class="form-control" placeholder="Digite seu Nome"
               value="<?= $userData->name ?>">
           </div>
           <div class="form-group">
-            <label for="lastname">Sobrenome: </label>
+            <label class="form-label" for="lastname">Sobrenome: </label>
             <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Digite seu Sobrenome"value="<?= $userData->lastname ?>">
           </div>
           <div class="form-group">
-            <label for="email">email: </label>
+            <label class="form-label" for="email">email: </label>
             <input type="text" readonly name="email" id="email" class="form-control disabled" placeholder="Digite seu email"
               value="<?= $userData->email ?>">
           </div>
@@ -43,11 +43,11 @@
           <div id="profile-image-container" 
           style="background-image: url('<?= $BASE_URL?>/img/users/<?= $userData->image ?>');"></div>
           <div class="form-group">
-            <label for="image">Foto: </label>
+            <label class="form-label" for="image">Foto: </label>
             <input type="file" name="image" id="image" class="form-control-file">
           </div>
           <div class="form-group">
-            <label for="bio">Sobre Você:</label>
+            <label class="form-label" for="bio">Sobre Você:</label>
             <textarea class="form-control" name="bio" id="bio" rows="5" placeholder="Conte quem é você!"><?= $userData->bio ?></textarea>
           </div>
         </div>
@@ -60,11 +60,11 @@
         <form action="<?= $BASE_URL ?>/user_process.php" method="post">
           <input type="hidden" name="type" value="changepassword">
           <div class="form-group">
-            <label for="password">Nova Senha: </label>
+            <label class="form-label" for="password">Nova Senha: </label>
             <input type="password" name="password" id="password" class="form-control" placeholder="Digite a nova senha">
           </div>
           <div class="form-group">
-            <label for="confirmpassword">confirme sua Senha: </label>
+            <label class="form-label" for="confirmpassword">confirme sua Senha: </label>
             <input type="password" name="confirmpassword" id="confirmpassword" class="form-control" placeholder="confirme a nova senha">
           </div>
           <input type="submit" class="btn card-btn" value="Alterar Senha">
