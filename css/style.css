@@ -236,6 +236,13 @@
   border-bottom: 2px solid #f5c518;
   
 }
+/* MOVIE */
+
+#review-form .card-btn {
+  width: auto;
+}
+
+
 
 /* EDITPROFILE */
 
