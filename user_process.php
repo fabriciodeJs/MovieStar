@@ -38,7 +38,7 @@ if ($type === "update") {
     // VALIDANDO IMAGEM
     if (in_array($image['type'], $imageTypes)) {
       //CHECA SE É JPG
-      if (in_array($image, $jpgArray)) {
+      if (in_array($image['type'], $jpgArray)) {
         $imageFile = imagecreatefromjpeg($image["tmp_name"]);
       }else {
         // IMAGEM PNG
