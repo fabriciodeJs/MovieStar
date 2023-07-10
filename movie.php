@@ -7,8 +7,6 @@
   //pegar id do filme
   $id = filter_input(INPUT_GET, "id");
 
-  $movie;
-
   $movieDao = new MovieDAO($conn, $BASE_URL);
 
   if (empty($id)) {
@@ -27,12 +25,10 @@
   // CHECA SE O FILME É DO USUARIO
   $userOwnsMovie = false;
 
-  if (empty($userData)) {
-    
-  }
-
-  if ($userData->id === $movie->users_id) {
-    $userOwnsMovie = true;
+  if (!empty($userData)) {
+    if ($userData->id === $movie->users_id) {
+      $userOwnsMovie = true;
+    }
   }
 
   if (empty($movie->image)) $movie->image = "movie.jpg";
@@ -67,7 +63,7 @@
           <input type="hidden" name="movies_id" value="<?= $movie->id ?>">
           <div class="form-group">
             <label for="rating" class="form-label">Nota do filme:</label>
-            <select name="rating" id="rating" class="form-control">
+            <select name="rating" id="rating" class="form-select">
               <option value="">Selecione</option>
               <optio value="10">10</optio>
               <option value="9">9</option>

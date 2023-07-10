@@ -205,7 +205,7 @@
   border-color:#f5c518
 }
 
-/* NEEWMOVIE */
+/* NEW MOVIE */
 
 .form-select {
   margin: 10px 0;
@@ -242,11 +242,71 @@
   width: auto;
 }
 
+#rating {
+  width: auto;
+}
+
+#review {
+  width: 550px;
+}
+
+.movie-container {
+ text-align: center;
+}
+
+.movie-details {
+  margin: 25px 0;
+
+}
+
+.pipe {
+  border: 1px solid #333;
+  margin: 0 10px;
+}
+
+#review-title {
+  margin-bottom: 25px;
+}
+
+#review-form-container {
+  background-color: #333;
+  padding: 20px;
+}
+
+#review-form-container select,
+#review-form-container textarea{
+  width: 50%;
+}
+
+#reviews-container {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 4px solid #F5c518;
+} 
+
+.review {
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+}
+
+.author-details-container {
+  padding-top: 20px;
+}
+
+.author-name a {
+  color: #f5c518;
+}
+
+.comment-title {
+  color: #999;
+}
+
 
 
 /* EDITPROFILE */
 
-#profile-image-container {
+#profile-image-container,
+.profile-image-container {
   width: 150px;
   height: 150px;
   border: 6px solid #f5c518;
@@ -254,6 +314,11 @@
   background-size: cover;
   background-position: center;
   margin: 15px auto;
+}
+
+.profile-image-container {
+  width: 70px;
+  height: 70px;
 }
 
 .page-description {
